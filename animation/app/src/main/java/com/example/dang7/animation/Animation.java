@@ -14,8 +14,12 @@ public class Animation extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
+
+        //ImageView　初期化
         animationImage = (ImageView)findViewById(R.id.image);
+        //AnimationDrawable　初期化
         animationDrawable = (AnimationDrawable)getResources().getDrawable(R.drawable.animation,null);
+        //animationImage　背景
         animationImage.setBackground(animationDrawable);
     }
 
@@ -28,4 +32,8 @@ public class Animation extends Activity {
             animationDrawable.stop();
         }
     }
+
+
+
+
 }
