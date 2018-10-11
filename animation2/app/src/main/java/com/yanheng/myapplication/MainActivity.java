@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                 //アニメーションの時間
                 translateAnimation.setDuration(2000);
                 //アニメーションの回数数字または　Animation.INFINITE（無限回）
-//                translateAnimation.setRepeatCount(Animation.INFINITE);
+                //translateAnimation.setRepeatCount(Animation.INFINITE);
                 translateAnimation.setRepeatCount(4);
                 //アニメーション停止したら最後の位置に停止する
                 translateAnimation.setFillAfter(true);
@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        //回転アニメーションテスト
+        //消えるアニメーションテスト
         Button button_alpha = (Button)findViewById(R.id.button_alpha);
         button_alpha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,16 +85,16 @@ public class MainActivity extends Activity {
                 );
                 alphaAnimation.setDuration(2000);
                 //消えた後表示しない
-//                alphaAnimation.setFillAfter(true);
+                //alphaAnimation.setFillAfter(true);
                 //消えた後再表示
-//                alphaAnimation.setFillAfter(false);
+                //alphaAnimation.setFillAfter(false);
                 alphaAnimation.setRepeatMode(Animation.REVERSE);
                 alphaAnimation.setRepeatCount(5);
                 imageView.startAnimation(alphaAnimation);
             }
         });
 
-        //回転アニメーションテスト
+        //大きさアニメーションテスト
         Button button_scale = (Button)findViewById(R.id.button_scale);
         button_scale.setOnClickListener(new View.OnClickListener() {
             @Override
