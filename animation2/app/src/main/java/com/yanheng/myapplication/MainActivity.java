@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
-    //
+    //移動アニメーション初期化
     private TranslateAnimation translateAnimation;
     {
         //Animation.RELATIVE_TO_PARENT　　親のViewに対して
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         //アニメーションのMode
         translateAnimation.setRepeatMode(Animation.REVERSE);
     }
-
+    //回転アニメーション初期化
     private RotateAnimation rotateAnimation;
     {
         rotateAnimation = new RotateAnimation(
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         //回転時間
         rotateAnimation.setDuration(500);
     }
-
+    //消えるアニメーション初期化
     private AlphaAnimation alphaAnimation;
     {
         alphaAnimation = new AlphaAnimation(
@@ -63,6 +63,7 @@ public class MainActivity extends Activity {
         alphaAnimation.setRepeatMode(Animation.REVERSE);
         alphaAnimation.setRepeatCount(3);
     }
+    //大きさアニメーション
     private ScaleAnimation scaleAnimation;
     {
         scaleAnimation = new ScaleAnimation(
@@ -147,11 +148,6 @@ public class MainActivity extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 L.d("animationSet2 完了");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 imageView3.startAnimation(animationSet3);
             }
 
