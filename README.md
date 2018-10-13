@@ -7,4 +7,10 @@ https://github.com/YanHengGo/android/blob/master/%E3%83%9C%E3%83%BC%E3%83%AB%E8%
 
 https://github.com/YanHengGo/android/ボール落下アニメーション効果.gif
 
+(https://github.com/YanHengGo/android/blob/master/ボール落下アニメーション効果.gif)
+
+https://github.com/YanHengGo/android/blob/master/ボール落下アニメーション効果.gif
+
+https://github.com/YanHengGo/android/raw/master/ボール落下アニメーション効果.gif
+
 
