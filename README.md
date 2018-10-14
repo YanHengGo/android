@@ -17,5 +17,11 @@ android project
 
  ![image](https://github.com/YanHengGo/android/blob/master/ボール落下アニメーション効果.gif)
 
+着信アニメション効果
 
+ ![image](https://github.com/YanHengGo/android/blob/master/着信アニメション.gif)
+
+ハートアニメション
+
+ ![image](https://github.com/YanHengGo/android/blob/master/ハートアニメション.gif)
 
