@@ -23,11 +23,6 @@ public class AnimationUtil2 {
 
 
     public static ObjectAnimator getTellphoneAnimation(ImageView imageView) {
-//        Keyframe frame0 = Keyframe.ofFloat(0f, 0);
-//        Keyframe frame1 = Keyframe.ofFloat(0.1f, -20f);
-//        Keyframe frame2 = Keyframe.ofFloat(1, 0);
-//        PropertyValuesHolder frameHolder = PropertyValuesHolder.ofKeyframe("rotation",frame0,frame1,frame2);
-
         Keyframe frame0 = Keyframe.ofFloat(0f, 0);
         Keyframe frame1 = Keyframe.ofFloat(0.1f, -20f);
         Keyframe frame2 = Keyframe.ofFloat(0.2f, 20f);
