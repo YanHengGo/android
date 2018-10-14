@@ -8,11 +8,12 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/img_hert"
+        android:id="@+id/imageView"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:src="@mipmap/hert" />
+        android:src="@mipmap/heart"
+        />
 
     <Button
         android:id="@+id/btn_start"
@@ -21,10 +22,17 @@
         android:text="start" />
 
     <Button
-        android:id="@+id/btn_stop"
+        android:id="@+id/btn_heart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="stop" />
+        android:text="ハートテスト"
+        />
+    <Button
+        android:id="@+id/btn_tellphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="電話テスト"
+        />
 
 
 </LinearLayout>
