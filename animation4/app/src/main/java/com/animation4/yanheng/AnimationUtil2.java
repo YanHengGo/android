@@ -10,11 +10,11 @@ import android.widget.ImageView;
 
 public class AnimationUtil2 {
     public static ObjectAnimator getHertAnimation(ImageView img_hert) {
-        PropertyValuesHolder alpha = PropertyValuesHolder.ofFloat("alpha" , 1.0f , 0.5f);
-        PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX" , 1.2f , 0.8f);
-        PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY" , 1.2f , 0.8f);
+        PropertyValuesHolder alpha = PropertyValuesHolder.ofFloat("alpha", 1.0f, 0.5f);
+        PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.2f, 0.8f);
+        PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.2f, 0.8f);
 
-        ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(img_hert,alpha,scaleX,scaleY);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(img_hert, alpha, scaleX, scaleY);
         objectAnimator.setDuration(2000);
         objectAnimator.setRepeatCount(Animation.INFINITE);
         objectAnimator.setRepeatMode(ValueAnimator.RESTART);
@@ -35,8 +35,8 @@ public class AnimationUtil2 {
         Keyframe frame9 = Keyframe.ofFloat(0.9f, -20f);
         Keyframe frame10 = Keyframe.ofFloat(1, 0);
         PropertyValuesHolder frameHolder = PropertyValuesHolder.ofKeyframe
-                ("rotation",frame0,frame1,frame2,frame3,frame4,frame5,frame6,frame7,frame8,frame9,frame10);
-        ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(imageView,frameHolder);
+                ("rotation", frame0, frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(imageView, frameHolder);
         objectAnimator.setDuration(1000);
         objectAnimator.setRepeatCount(2);
         objectAnimator.setRepeatMode(ValueAnimator.RESTART);

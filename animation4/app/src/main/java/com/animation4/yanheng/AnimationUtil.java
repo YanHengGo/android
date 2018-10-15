@@ -9,12 +9,11 @@ import android.view.animation.TranslateAnimation;
 public class AnimationUtil {
     /**
      * 以下のクラスはすべて　android.view.animation.Animation　を継承している
-     *
+     * <p>
      * android.view.animation.AlphaAnimation : 消えるアニメーション初期化
      * android.view.animation.RotateAnimation : 回転アニメーション初期化
      * android.view.animation.ScaleAnimation : 大きさアニメーション
      * android.view.animation.TranslateAnimation : 移動アニメーション初期化
-     *
      */
 
 
@@ -91,10 +90,11 @@ public class AnimationUtil {
     }
 
     //消えるアニメーション初期化
-    public static AlphaAnimation getAlphaAnimation(){
-        return getAlphaAnimation(DURATION_TIME,REPEAT_COUNT,REPEAT_MODE);
+    public static AlphaAnimation getAlphaAnimation() {
+        return getAlphaAnimation(DURATION_TIME, REPEAT_COUNT, REPEAT_MODE);
     }
-    private static AlphaAnimation getAlphaAnimation(int time, int count, int mode){
+
+    private static AlphaAnimation getAlphaAnimation(int time, int count, int mode) {
         AlphaAnimation alphaAnimation = new AlphaAnimation(
                 1,
                 0
