@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.NumberPicker;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -100,15 +101,11 @@ public class MainActivity extends Activity {
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-//                int hour = tp.getCurrentHour();
-//                int minute = tp.getCurrentMinute();
-//                L.d(""+hour+":"+minute);
             }
         });
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
     }
-
     /**
      * AlertDialog.Builder+TimePicker 独自タイトル
      * @param v
@@ -136,4 +133,22 @@ public class MainActivity extends Activity {
         builder.create().show();
     }
 
+    private String[] mCities  = {"東京","大阪","名古屋","札幌","千葉","埼玉"};
+    public void pickerDemo5(View v){
+        NumberPicker mNumberPicker = new NumberPicker(this);
+        mNumberPicker.setDisplayedValues(mCities);
+        mNumberPicker.setMinValue(0);
+        mNumberPicker.setMaxValue(mCities.length - 1);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("日本の都道府県");
+        builder.setView(mNumberPicker);
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        builder.setNegativeButton(android.R.string.cancel, null);
+        builder.create().show();
+    }
 }
