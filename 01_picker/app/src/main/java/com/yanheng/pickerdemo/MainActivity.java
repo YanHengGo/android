@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
         int minute=0;
         final DatePicker dp = new DatePicker(this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("title");
+        builder.setTitle("独自タイトル");
         builder.setView(dp);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
