@@ -18,6 +18,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.yanheng.pickerdemo.mypicker.OneNumberPicker;
+import com.yanheng.pickerdemo.mypicker.TwoNumberPicker;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -138,8 +139,37 @@ public class MainActivity extends Activity {
     private String[] mCities  = {"東京","大阪","名古屋","札幌","千葉","埼玉"};
     public void pickerDemo5(View v){
 //        NumberPickerDemo();
-        oneNumberPickerDemo();
+//        oneNumberPickerDemo();
+        twoNumberPickerDemo();
     }
+
+    private void twoNumberPickerDemo() {
+        String title = "身長";
+        final String unit1 = ".";
+        String [] contents1 = {"170","171","172","173","174","175","176","177"};
+        int defaultValue1 = 3;
+        final String unit2 = "cm";
+        String [] contents2 = {"0","1","2","3","4","5","6","7","8","9"};
+        int defaultValue2 = 0;
+        TwoNumberPicker twoNumberPicker = new TwoNumberPicker(this);
+        twoNumberPicker.setTitle(title);
+        twoNumberPicker.setNumberPickerLeft(unit1,contents1,defaultValue1);
+        twoNumberPicker.setNumberPickerRight(unit2,contents2,defaultValue2);
+        twoNumberPicker.setCallback(new TwoNumberPicker.Callback() {
+            @Override
+            public void onOK(String selectValueLeft, String selectValueRight) {
+                String showText = selectValueLeft + unit1 + selectValueRight + unit2;
+                Toast.makeText(getApplicationContext(),showText,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplicationContext(),"cancel",Toast.LENGTH_LONG).show();
+            }
+        });
+        twoNumberPicker.show();
+    }
+
 
     private void NumberPickerDemo() {
         NumberPicker mNumberPicker = new NumberPicker(this);
