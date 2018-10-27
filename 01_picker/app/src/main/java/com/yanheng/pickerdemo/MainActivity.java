@@ -15,10 +15,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.yanheng.pickerdemo.mypicker.OneNumberPicker;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TooManyListenersException;
 
 public class MainActivity extends Activity {
 
@@ -133,6 +137,11 @@ public class MainActivity extends Activity {
 
     private String[] mCities  = {"東京","大阪","名古屋","札幌","千葉","埼玉"};
     public void pickerDemo5(View v){
+//        NumberPickerDemo();
+        oneNumberPickerDemo();
+    }
+
+    private void NumberPickerDemo() {
         NumberPicker mNumberPicker = new NumberPicker(this);
         mNumberPicker.setDisplayedValues(mCities);
         mNumberPicker.setMinValue(0);
@@ -149,6 +158,29 @@ public class MainActivity extends Activity {
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
     }
+
+    public void oneNumberPickerDemo(){
+        String[] contentValues  = {"1","2","3","4","5","6","7","8","9","10"};
+        OneNumberPicker oneNumberPicker = new OneNumberPicker(this);
+        oneNumberPicker.setTitle("注文数");
+        oneNumberPicker.setNumberPicker("個",contentValues,1);
+        oneNumberPicker.setCallback(new OneNumberPicker.Callback() {
+            @Override
+            public void onOK(String selectValue) {
+                String s =selectValue+"個、注文した";
+                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancel() {
+                L.d();
+                Toast.makeText(getApplicationContext(),"cancel",Toast.LENGTH_LONG).show();
+            }
+        });
+        oneNumberPicker.show();
+    }
+
+
     public void pickerDemo6 (View v){
         DrawViewDemo drawViewDemo = findViewById(R.id.draw_view);
         drawViewDemo.setVisibility(View.VISIBLE);
