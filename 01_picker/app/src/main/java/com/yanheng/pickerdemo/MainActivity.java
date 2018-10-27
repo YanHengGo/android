@@ -57,8 +57,6 @@ public class MainActivity extends Activity {
         // 日付設定ダイアログの表示
         datePickerDialog.show();
 
-
-
     }
     private DatePickerDialog.OnDateSetListener DateSetListener_expected_date = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -150,5 +148,9 @@ public class MainActivity extends Activity {
         });
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
+    }
+    public void pickerDemo6 (View v){
+        DrawViewDemo drawViewDemo = findViewById(R.id.draw_view);
+        drawViewDemo.setVisibility(View.VISIBLE);
     }
 }

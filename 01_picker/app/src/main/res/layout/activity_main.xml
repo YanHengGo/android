@@ -37,5 +37,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp" />
+    <Button
+        android:onClick="pickerDemo6"
+        android:text="open draw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+    <com.yanheng.pickerdemo.DrawViewDemo
+        android:id="@+id/draw_view"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"/>
 
 </LinearLayout>
