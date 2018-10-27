@@ -21,15 +21,30 @@ public class OneNumberPicker {
     public  OneNumberPicker (Context context){
         this.context = context;
     }
+
+    /**
+     * @param unit      単位
+     * @param content　表示内容
+     * @param value　　初期表示内容
+     */
     public void setNumberPicker(String unit , String [] content , int value){
         this.pickerContent = content;
         this.pickerUnit = unit;
         defaultValue = value;
     }
+
+    /**
+     * タイトル設定
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     * ボタンタッチのコールバック
+     * @param callback
+     */
     public void setCallback(Callback callback) {
         this.callback = callback;
     }
