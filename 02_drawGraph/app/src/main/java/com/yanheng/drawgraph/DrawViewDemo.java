@@ -85,17 +85,21 @@ public class DrawViewDemo extends View {
         graphMail.put(17,170.7f);
     }
     //原点
-    private final int ORIGIN_X = 50;
-    private final int ORIGIN_Y = 150;
+    private final float ORIGIN_X = 50f;
+    private final float ORIGIN_Y = 150f;
     //X軸　長さ
-    private final int AXIS_X = 200;
-    //X軸　点数
-    private final int POINT_X = 10;
-
+    private final float AXIS_X = 200f;
     //Y軸　長さ
-    private final int AXIS_Y = 100;
-    //Y軸　点数
-    private final int POINT_Y = 4;
+    private final float AXIS_Y = 100f;
+
+
+    private float scaleValueY = 10f;
+    private float minScaleY = 120f;
+    private float maxScaleY = 180f;
+
+    private float scaleValueX = 1f;
+    private float minScaleX = 10f;
+    private float maxScaleX = 20f;
 
     private void drawTopBottomLine(Canvas canvas) {
 
@@ -112,30 +116,38 @@ public class DrawViewDemo extends View {
                 ORIGIN_Y*density,
                 getBaseLinePaint(context));
 
-//        for (Map.Entry<Integer,Float> entry: graphMail.entrySet()) {
-//
-//        }
-        int scaleY = AXIS_Y/POINT_Y;
-        L.d("scaleY="+scaleY);
-        for(int x = 1 ;x<=POINT_Y ;x++){
-            canvas.drawLine(
-                    ORIGIN_X*density,
-                    (ORIGIN_Y-scaleY*x)*density,
-                    (ORIGIN_X+5)*density,
-                    (ORIGIN_Y-scaleY*x)*density,
+        //scale の数
+        float scaleCountY = (maxScaleY-minScaleY)/scaleValueY;
+        //いちscaleはグラフ上のサイズ
+        float scaleGraphValueY = AXIS_Y/scaleCountY;
+        for(int x = 1 ;x<=scaleCountY ;x++){
+            float startX = ORIGIN_X*density;
+            float startY = (ORIGIN_Y-scaleGraphValueY*x)*density;
+            canvas.drawLine(startX,startY,
+                    (startX+5*density),startY,
                     getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int)minScaleY+x),startX-30*density,startY+8*density,getBaseLinePaint(context));
         }
-        int scaleX = AXIS_X/POINT_X;
-        L.d("scaleY="+scaleY);
-        for(int x = 1 ;x<=POINT_X ;x++){
+        //scale の数
+        float scaleCountX = (maxScaleX-minScaleX)/scaleValueX;
+        //いちscaleはグラフ上のサイズ
+        float scaleGraphValueX = AXIS_X/scaleCountX;
+        for(int x = 0 ;x<=scaleCountX ;x++){
+            float startX = (ORIGIN_X+scaleGraphValueX*x)*density;
+            float startY = (ORIGIN_Y)*density;
             canvas.drawLine(
-                    (ORIGIN_X+scaleX*x)*density,
-                    (ORIGIN_Y)*density,
-                    (ORIGIN_X+scaleX*x)*density,
-                    (ORIGIN_Y-5)*density,
+                    startX,
+                    startY,
+                    startX,
+                    (startY-5*density),
                     getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int)minScaleX+x),startX-8*density,startY+14*density,getBaseLinePaint(context));
         }
-        
+
+        //グラフ
+        for (Map.Entry<Integer,Float> entry: graphMail.entrySet()) {
+            
+        }
 
     }
 
@@ -157,6 +169,7 @@ public class DrawViewDemo extends View {
         paint.setStrokeWidth(convDp2Px(context, LINE_WIDTH));
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
+        paint.setTextSize(50);
         return paint;
     }
 }
