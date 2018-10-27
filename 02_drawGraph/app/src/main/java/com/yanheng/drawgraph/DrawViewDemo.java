@@ -8,6 +8,9 @@ import android.view.View;
 
 import com.yanheng.drawgraph.util.L;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DrawViewDemo extends View {
     public DrawViewDemo(Context context) {
         super(context);
@@ -50,15 +53,90 @@ public class DrawViewDemo extends View {
         super.onLayout(changed, left, top, right, bottom);
         L.d();
     }
-
+    private float density;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        this.density = context.getResources().getDisplayMetrics().density;
         //タイトル
+        String title = "タイトル";
+        //縦軸名
+        //横軸名
+        //縦軸（線とスケール）
+        drawTopBottomLine(canvas);
+
+        //横軸（線とスケール）
+        //グラフ
+
 
         L.d();
-        drawTopBottomLine(canvas);
+    }
+    //男の子、身長年齢
+    private HashMap<Integer,Float> graphMail = new HashMap<>();
+    private HashMap<Integer,Float> graphFemail = new HashMap<>();
+    {
+        graphMail.put(10,138.9f);
+        graphMail.put(11,145f);
+        graphMail.put(12,152.4f);
+        graphMail.put(13,159.5f);
+        graphMail.put(14,165.1f);
+        graphMail.put(15,168.4f);
+        graphMail.put(16,169.8f);
+        graphMail.put(17,170.7f);
+    }
+    //原点
+    private final int ORIGIN_X = 50;
+    private final int ORIGIN_Y = 150;
+    //X軸　長さ
+    private final int AXIS_X = 200;
+    //X軸　点数
+    private final int POINT_X = 10;
+
+    //Y軸　長さ
+    private final int AXIS_Y = 100;
+    //Y軸　点数
+    private final int POINT_Y = 4;
+
+    private void drawTopBottomLine(Canvas canvas) {
+
+        canvas.drawLine(
+                ORIGIN_X*density,
+                ORIGIN_Y*density,
+                ORIGIN_X*density,
+                (ORIGIN_Y-AXIS_Y)*density,
+                getBaseLinePaint(context));
+        canvas.drawLine(
+                ORIGIN_X*density,
+                ORIGIN_Y*density,
+                (ORIGIN_X+AXIS_X)*density,
+                ORIGIN_Y*density,
+                getBaseLinePaint(context));
+
+//        for (Map.Entry<Integer,Float> entry: graphMail.entrySet()) {
+//
+//        }
+        int scaleY = AXIS_Y/POINT_Y;
+        L.d("scaleY="+scaleY);
+        for(int x = 1 ;x<=POINT_Y ;x++){
+            canvas.drawLine(
+                    ORIGIN_X*density,
+                    (ORIGIN_Y-scaleY*x)*density,
+                    (ORIGIN_X+5)*density,
+                    (ORIGIN_Y-scaleY*x)*density,
+                    getBaseLinePaint(context));
+        }
+        int scaleX = AXIS_X/POINT_X;
+        L.d("scaleY="+scaleY);
+        for(int x = 1 ;x<=POINT_X ;x++){
+            canvas.drawLine(
+                    (ORIGIN_X+scaleX*x)*density,
+                    (ORIGIN_Y)*density,
+                    (ORIGIN_X+scaleX*x)*density,
+                    (ORIGIN_Y-5)*density,
+                    getBaseLinePaint(context));
+        }
+        
+
     }
 
     /**
@@ -80,8 +158,5 @@ public class DrawViewDemo extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
         return paint;
-    }
-    private void drawTopBottomLine(Canvas canvas) {
-        canvas.drawLine(0, 10, 100, 10, getBaseLinePaint(context));
     }
 }
