@@ -72,17 +72,17 @@ public class DrawViewDemo extends View {
         L.d();
     }
     //男の子、身長年齢
-    private HashMap<Integer,Float> graphMail = new HashMap<>();
-    private HashMap<Integer,Float> graphFemail = new HashMap<>();
+    private HashMap<Float,Float> graphMail = new HashMap<>();
+    private HashMap<Float,Float> graphFemail = new HashMap<>();
     {
-        graphMail.put(10,138.9f);
-        graphMail.put(11,145f);
-        graphMail.put(12,152.4f);
-        graphMail.put(13,159.5f);
-        graphMail.put(14,165.1f);
-        graphMail.put(15,168.4f);
-        graphMail.put(16,169.8f);
-        graphMail.put(17,170.7f);
+        graphMail.put(10f,138.9f);
+        graphMail.put(11f,145f);
+        graphMail.put(12f,152.4f);
+        graphMail.put(13f,159.5f);
+        graphMail.put(14f,165.1f);
+        graphMail.put(15f,168.4f);
+        graphMail.put(16f,169.8f);
+        graphMail.put(17f,170.7f);
     }
     //原点
     private final float ORIGIN_X = 50f;
@@ -99,7 +99,7 @@ public class DrawViewDemo extends View {
 
     private float scaleValueX = 1f;
     private float minScaleX = 10f;
-    private float maxScaleX = 20f;
+    private float maxScaleX = 18f;
 
     private void drawTopBottomLine(Canvas canvas) {
 
@@ -126,7 +126,7 @@ public class DrawViewDemo extends View {
             canvas.drawLine(startX,startY,
                     (startX+5*density),startY,
                     getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int)minScaleY+x),startX-30*density,startY+8*density,getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int)minScaleY+x*(int)scaleValueY),startX-30*density,startY+8*density,getBaseLinePaint(context));
         }
         //scale の数
         float scaleCountX = (maxScaleX-minScaleX)/scaleValueX;
@@ -141,14 +141,21 @@ public class DrawViewDemo extends View {
                     startX,
                     (startY-5*density),
                     getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int)minScaleX+x),startX-8*density,startY+14*density,getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int)minScaleX+x*(int)scaleValueX),startX-8*density,startY+14*density,getBaseLinePaint(context));
         }
+
+        L.d("ORIGIN_X = "+ORIGIN_X);
 
         //グラフ
-        for (Map.Entry<Integer,Float> entry: graphMail.entrySet()) {
-            
+        for (Map.Entry<Float,Float> entry: graphMail.entrySet()) {
+            L.d("-------------"+"start");
+            L.d(String.valueOf((entry.getValue()-minScaleY)/scaleValueY));
+            float x = (ORIGIN_X + (entry.getKey()-minScaleX)/scaleValueX*scaleGraphValueX)*density;
+            float y =  (ORIGIN_Y - (entry.getValue()-minScaleY)/scaleValueY*scaleGraphValueY)*density;
+            L.d("x="+x+"   y="+y);
+            L.d("-------------"+"end");
+            canvas.drawPoint(x,y,getCirclePaint());
         }
-
     }
 
     /**
@@ -172,4 +179,19 @@ public class DrawViewDemo extends View {
         paint.setTextSize(50);
         return paint;
     }
+
+    private static final int CIRCLE_COLOR = 0xFFb56f7f;
+    /**
+     * プロットサークル描画用のPaint取得
+     * @return Paint
+     */
+    public static Paint getCirclePaint() {
+        Paint paint = new Paint();
+        paint.setColor(CIRCLE_COLOR);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setAntiAlias(true);
+        paint.setStrokeWidth(20);
+        return paint;
+    }
+
 }
