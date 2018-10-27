@@ -140,10 +140,10 @@ public class MainActivity extends Activity {
     public void pickerDemo5(View v){
 //        NumberPickerDemo();
 //        oneNumberPickerDemo();
-        twoNumberPickerDemo();
+//        twoNumberPickerDemo();
     }
 
-    private void twoNumberPickerDemo() {
+    public void twoNumberPickerDemo(View v) {
         String title = "身長";
         final String unit1 = ".";
         String [] contents1 = {"170","171","172","173","174","175","176","177"};
@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
     }
 
 
-    private void NumberPickerDemo() {
+    public void NumberPickerDemo(View v) {
         NumberPicker mNumberPicker = new NumberPicker(this);
         mNumberPicker.setDisplayedValues(mCities);
         mNumberPicker.setMinValue(0);
@@ -189,7 +189,7 @@ public class MainActivity extends Activity {
         builder.create().show();
     }
 
-    public void oneNumberPickerDemo(){
+    public void oneNumberPickerDemo(View v){
         String[] contentValues  = {"1","2","3","4","5","6","7","8","9","10"};
         OneNumberPicker oneNumberPicker = new OneNumberPicker(this);
         oneNumberPicker.setTitle("注文数");

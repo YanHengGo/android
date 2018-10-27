@@ -48,5 +48,17 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:visibility="gone"/>
+    <Button
+        android:onClick="oneNumberPickerDemo"
+        android:text="NumberPickerは１つのデモ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+    <Button
+        android:onClick="twoNumberPickerDemo"
+        android:text="NumberPickerは２つのデモ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
 
 </LinearLayout>
