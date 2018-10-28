@@ -60,6 +60,10 @@ public class DrawViewDemo extends View {
         this.density = context.getResources().getDisplayMetrics().density;
         //タイトル
         String title = "タイトル";
+
+        
+
+
         //縦軸名
         //横軸名
         //縦軸（線とスケール）
@@ -96,6 +100,7 @@ public class DrawViewDemo extends View {
     private float scaleValueY = 10f;
     private float minScaleY = 120f;
     private float maxScaleY = 180f;
+
 
     private float scaleValueX = 1f;
     private float minScaleX = 10f;
@@ -147,14 +152,20 @@ public class DrawViewDemo extends View {
         L.d("ORIGIN_X = "+ORIGIN_X);
 
         //グラフ
+        float previousX=-1,previousY=-1;
         for (Map.Entry<Float,Float> entry: graphMail.entrySet()) {
             L.d("-------------"+"start");
             L.d(String.valueOf((entry.getValue()-minScaleY)/scaleValueY));
-            float x = (ORIGIN_X + (entry.getKey()-minScaleX)/scaleValueX*scaleGraphValueX)*density;
-            float y =  (ORIGIN_Y - (entry.getValue()-minScaleY)/scaleValueY*scaleGraphValueY)*density;
-            L.d("x="+x+"   y="+y);
+            float currentX = (ORIGIN_X + (entry.getKey()-minScaleX)/scaleValueX*scaleGraphValueX)*density;
+            float currentY =  (ORIGIN_Y - (entry.getValue()-minScaleY)/scaleValueY*scaleGraphValueY)*density;
+            L.d("x="+currentX+"   y="+currentY);
             L.d("-------------"+"end");
-            canvas.drawPoint(x,y,getCirclePaint());
+            canvas.drawPoint(currentX,currentY,getCirclePaint());
+            if( !(previousX==-1&&previousY==-1) ){
+                canvas.drawLine(previousX,previousY,currentX,currentY,getBaseLinePaint(context));
+            }
+            previousX = currentX;
+            previousY = currentY;
         }
     }
 
