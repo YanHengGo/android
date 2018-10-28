@@ -211,7 +211,7 @@ public class DrawViewDemo extends View {
     }
     private Paint getGraphPaint(Context context) {
         Paint paint = new Paint();
-        paint.setColor(0xFF60D7FF);
+        paint.setColor(0xFF1EFF47);
         paint.setStrokeWidth(convDp2Px(context, 1));
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
