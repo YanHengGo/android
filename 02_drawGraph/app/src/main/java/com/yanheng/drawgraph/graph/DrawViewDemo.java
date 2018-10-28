@@ -127,7 +127,7 @@ public class DrawViewDemo extends View {
                 ORIGIN_Y * density,
                 ORIGIN_X * density,
                 (ORIGIN_Y - AXIS_Y) * density,
-                getBaseLinePaint(context));
+                getLinePaint(context));
         //Y軸目盛と下に表示する数字
         for (int x = 1; x <= scaleCountY; x++) {
             float startX = ORIGIN_X * density;
@@ -135,8 +135,8 @@ public class DrawViewDemo extends View {
             canvas.drawLine(startX, startY,
 //                    (startX+5*density),startY,
                     (startX + AXIS_X * density), startY,
-                    getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int) graphSettingData.axisDataY.minScale + x * (int) graphSettingData.axisDataY.scaleValue), startX - 30 * density, startY + 8 * density, getBaseLinePaint(context));
+                    getLinePaint(context));
+            canvas.drawText(String.valueOf((int) graphSettingData.axisDataY.minScale + x * (int) graphSettingData.axisDataY.scaleValue), startX - 30 * density, startY + 8 * density, getLabelPaint(context));
         }
         //Y軸名
         drawText(canvas, graphSettingData.axisDataY.scaleTitle, (ORIGIN_X - 35) * density, (ORIGIN_Y - 50) * density, getLabelPaint(context), -90);
@@ -149,7 +149,7 @@ public class DrawViewDemo extends View {
                 ORIGIN_Y * density,
                 (ORIGIN_X + AXIS_X) * density,
                 ORIGIN_Y * density,
-                getBaseLinePaint(context));
+                getLinePaint(context));
         //X軸メモリと下に表示する数字
         for (int x = 0; x <= scaleCountX; x++) {
             float startX = (ORIGIN_X + scaleGraphValueX * x) * density;
@@ -159,8 +159,8 @@ public class DrawViewDemo extends View {
                     startY,
                     startX,
                     (startY - 5 * density),
-                    getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int) graphSettingData.axisDataX.minScale + x * (int) graphSettingData.axisDataX.scaleValue), startX - 8 * density, startY + 14 * density, getBaseLinePaint(context));
+                    getLinePaint(context));
+            canvas.drawText(String.valueOf((int) graphSettingData.axisDataX.minScale + x * (int) graphSettingData.axisDataX.scaleValue), startX - 8 * density, startY + 14 * density, getLabelPaint(context));
         }
         //X軸名
         canvas.drawText(graphSettingData.axisDataX.scaleTitle, (ORIGIN_X + 50) * density, (ORIGIN_Y + 30) * density, getLabelPaint(context));
@@ -179,14 +179,12 @@ public class DrawViewDemo extends View {
         if (graph == null) return;
         float previousX = -1, previousY = -1, currentX = 0, currentY = 0;
         for (Map.Entry<Float, Float> entry : graph.entrySet()) {
-            L.d("-------------" + "start");
             L.d(String.valueOf((entry.getValue() - graphSettingData.axisDataY.minScale) / graphSettingData.axisDataY.scaleValue));
             currentX = (ORIGIN_X + (entry.getKey() - graphSettingData.axisDataX.minScale) / graphSettingData.axisDataX.scaleValue * scaleGraphValueX) * density;
             currentY = (ORIGIN_Y - (entry.getValue() - graphSettingData.axisDataY.minScale) / graphSettingData.axisDataY.scaleValue * scaleGraphValueY) * density;
-            L.d("x=" + currentX + "   y=" + currentY);
             canvas.drawPoint(currentX, currentY, getCirclePaint());
             if (!(previousX == -1 && previousY == -1)) {
-                canvas.drawLine(previousX, previousY, currentX, currentY, getBaseLinePaint(context));
+                canvas.drawLine(previousX, previousY, currentX, currentY, getGraphPaint(context));
             }
             previousX = currentX;
             previousY = currentY;
@@ -197,23 +195,24 @@ public class DrawViewDemo extends View {
     }
 
 
-    private final int CIRCLE_COLOR = 0xFFb56f7f;
-    private final int BASE_LINE_COLOR = 0xFFFE85A0;
-    private final int LINE_WIDTH = 1;
-    private Paint sLabelPaint;
-    private final int FONT_SIZE = 12;
-    private final int FONT_COLOR = 0xFF400030;
-
-
     private int convDp2Px(Context context, int dp) {
         float density = context.getResources().getDisplayMetrics().density;
         return (int) (dp * density);
     }
 
-    private Paint getBaseLinePaint(Context context) {
+    private Paint getLinePaint(Context context) {
         Paint paint = new Paint();
-        paint.setColor(BASE_LINE_COLOR);
-        paint.setStrokeWidth(convDp2Px(context, LINE_WIDTH));
+        paint.setColor(0xFF000000);
+        paint.setStrokeWidth(convDp2Px(context, 1));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setAntiAlias(true);
+        paint.setTextSize(50);
+        return paint;
+    }
+    private Paint getGraphPaint(Context context) {
+        Paint paint = new Paint();
+        paint.setColor(0xFF60D7FF);
+        paint.setStrokeWidth(convDp2Px(context, 1));
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
         paint.setTextSize(50);
@@ -223,7 +222,7 @@ public class DrawViewDemo extends View {
 
     private Paint getCirclePaint() {
         Paint paint = new Paint();
-        paint.setColor(CIRCLE_COLOR);
+        paint.setColor(0xFFb56f7f);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(20);
@@ -231,17 +230,14 @@ public class DrawViewDemo extends View {
     }
 
     private Paint getLabelPaint(Context context) {
-        if (sLabelPaint == null) {
-            Paint paint = new Paint();
-            paint.setColor(FONT_COLOR);
-            paint.setTextSize(convDp2Px(context, FONT_SIZE));
-            paint.setStyle(Paint.Style.FILL);
-            paint.setTextAlign(Paint.Align.CENTER);
-            paint.setTypeface(Typeface.DEFAULT);
-            paint.setAntiAlias(true);
-            sLabelPaint = paint;
-        }
-        return sLabelPaint;
+        Paint paint = new Paint();
+        paint.setColor(0xFF400030);
+        paint.setTextSize(convDp2Px(context, 12));
+        paint.setStyle(Paint.Style.FILL);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTypeface(Typeface.DEFAULT);
+        paint.setAntiAlias(true);
+        return paint;
     }
 
     private void drawText(Canvas canvas, String text, float x, float y, Paint paint, float angle) {
