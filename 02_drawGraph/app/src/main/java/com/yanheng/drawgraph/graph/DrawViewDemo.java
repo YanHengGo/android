@@ -4,10 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.TextureView;
 import android.view.View;
 
-import com.yanheng.drawgraph.graph.data.GraphData;
+import com.yanheng.drawgraph.graph.data.GraphSettingData;
 import com.yanheng.drawgraph.util.L;
 
 import java.util.HashMap;
@@ -39,8 +41,9 @@ public class DrawViewDemo extends View {
     }
 
     private Context context;
+
     private void init(Context context) {
-        this.context =context;
+        this.context = context;
     }
 
 
@@ -55,58 +58,8 @@ public class DrawViewDemo extends View {
         super.onLayout(changed, left, top, right, bottom);
         L.d();
     }
+
     private float density;
-
-    private GraphData graphData;
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.density = context.getResources().getDisplayMetrics().density;
-        //タイトル
-        String title = "タイトル";
-
-        createData();
-
-
-        //縦軸名
-        //横軸名
-        //縦軸（線とスケール）
-        drawTopBottomLine(canvas);
-
-        //横軸（線とスケール）
-        //グラフ
-
-
-        L.d();
-    }
-    private void createData() {
-        graphData = new GraphData();
-        graphData.title = "身長グラフ";
-        graphData.axisDataX.maxScale =18f;
-        graphData.axisDataX.minScale =10f;
-        graphData.axisDataX.scaleValue =1f;
-        graphData.axisDataX.scaleTitle = "年齢(歳)";
-
-        graphData.axisDataY.maxScale =180f;
-        graphData.axisDataY.minScale =120f;
-        graphData.axisDataY.scaleValue =10f;
-        graphData.axisDataY.scaleTitle = "身長(cm)";
-    }
-
-    //男の子、身長年齢
-    private HashMap<Float,Float> graphMail = new HashMap<>();
-    private HashMap<Float,Float> graphFemail = new HashMap<>();
-    {
-        graphMail.put(10f,138.9f);
-        graphMail.put(11f,145f);
-        graphMail.put(12f,152.4f);
-        graphMail.put(13f,159.5f);
-        graphMail.put(14f,165.1f);
-        graphMail.put(15f,168.4f);
-        graphMail.put(16f,169.8f);
-        graphMail.put(17f,170.7f);
-    }
     //原点
     private final float ORIGIN_X = 50f;
     private final float ORIGIN_Y = 150f;
@@ -114,85 +67,150 @@ public class DrawViewDemo extends View {
     private final float AXIS_X = 200f;
     //Y軸　長さ
     private final float AXIS_Y = 100f;
+    //X軸、Y軸など設定用のデータ
+    private GraphSettingData graphSettingData = null;
 
+    public void setGraphSettingData(GraphSettingData graphSettingData) {
+        this.graphSettingData = graphSettingData;
+    }
 
-    private void drawTopBottomLine(Canvas canvas) {
+    //グラフ１データ
+    private HashMap<Float, Float> graph1 = null;
 
-        canvas.drawLine(
-                ORIGIN_X*density,
-                ORIGIN_Y*density,
-                ORIGIN_X*density,
-                (ORIGIN_Y-AXIS_Y)*density,
-                getBaseLinePaint(context));
-        canvas.drawLine(
-                ORIGIN_X*density,
-                ORIGIN_Y*density,
-                (ORIGIN_X+AXIS_X)*density,
-                ORIGIN_Y*density,
-                getBaseLinePaint(context));
+    public void setGraph1(HashMap<Float, Float> graph1) {
+        this.graph1 = graph1;
+    }
 
-        //scale の数
-        float scaleCountY = (graphData.axisDataY.maxScale-graphData.axisDataY.minScale)/graphData.axisDataY.scaleValue;
-        //いちscaleはグラフ上のサイズ
-        float scaleGraphValueY = AXIS_Y/scaleCountY;
-        for(int x = 1 ;x<=scaleCountY ;x++){
-            float startX = ORIGIN_X*density;
-            float startY = (ORIGIN_Y-scaleGraphValueY*x)*density;
-            canvas.drawLine(startX,startY,
-//                    (startX+5*density),startY,
-                    (startX+AXIS_X*density),startY,
-                    getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int)graphData.axisDataY.minScale+x*(int)graphData.axisDataY.scaleValue),startX-30*density,startY+8*density,getBaseLinePaint(context));
+    //グラフ2データ
+    private HashMap<Float, Float> graph2 = null;
+
+    public void setGraph2(HashMap<Float, Float> graph2) {
+        this.graph2 = graph2;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (graphSettingData == null || graph1 == null) {
+            return;
         }
+        this.density = context.getResources().getDisplayMetrics().density;
         //scale の数
-        float scaleCountX = (graphData.axisDataX.maxScale-graphData.axisDataX.minScale)/graphData.axisDataX.scaleValue;
+        float scaleCountX = (graphSettingData.axisDataX.maxScale - graphSettingData.axisDataX.minScale) / graphSettingData.axisDataX.scaleValue;
         //いちscaleはグラフ上のサイズ
-        float scaleGraphValueX = AXIS_X/scaleCountX;
-        for(int x = 0 ;x<=scaleCountX ;x++){
-            float startX = (ORIGIN_X+scaleGraphValueX*x)*density;
-            float startY = (ORIGIN_Y)*density;
+        float scaleGraphValueX = AXIS_X / scaleCountX;
+        //scale の数
+        float scaleCountY = (graphSettingData.axisDataY.maxScale - graphSettingData.axisDataY.minScale) / graphSettingData.axisDataY.scaleValue;
+        //いちscaleはグラフ上のサイズ
+        float scaleGraphValueY = AXIS_Y / scaleCountY;
+
+        //タイトル
+        drawTitle(canvas);
+        //縦軸
+        drawAxisY(canvas, scaleCountY, scaleGraphValueY);
+        //横軸
+        drawAxisX(canvas, scaleCountX, scaleGraphValueX);
+        //グラフ
+        drawGraph(canvas, scaleGraphValueX, scaleGraphValueY, graph1,graphSettingData.graphNmae1);
+        drawGraph(canvas, scaleGraphValueX, scaleGraphValueY, graph2,graphSettingData.graphNmae2);
+        L.d();
+    }
+
+    private void drawTitle(Canvas canvas) {
+        canvas.drawText(graphSettingData.title, (ORIGIN_X + 100) * density, (ORIGIN_Y - 120) * density, getLabelPaint(context));
+    }
+
+    private void drawAxisY(Canvas canvas, float scaleCountY, float scaleGraphValueY) {
+        //X軸
+        canvas.drawLine(
+                ORIGIN_X * density,
+                ORIGIN_Y * density,
+                ORIGIN_X * density,
+                (ORIGIN_Y - AXIS_Y) * density,
+                getBaseLinePaint(context));
+        //Y軸目盛と下に表示する数字
+        for (int x = 1; x <= scaleCountY; x++) {
+            float startX = ORIGIN_X * density;
+            float startY = (ORIGIN_Y - scaleGraphValueY * x) * density;
+            canvas.drawLine(startX, startY,
+//                    (startX+5*density),startY,
+                    (startX + AXIS_X * density), startY,
+                    getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int) graphSettingData.axisDataY.minScale + x * (int) graphSettingData.axisDataY.scaleValue), startX - 30 * density, startY + 8 * density, getBaseLinePaint(context));
+        }
+        //Y軸名
+        drawText(canvas, graphSettingData.axisDataY.scaleTitle, (ORIGIN_X - 35) * density, (ORIGIN_Y - 50) * density, getLabelPaint(context), -90);
+    }
+
+    private void drawAxisX(Canvas canvas, float scaleCountX, float scaleGraphValueX) {
+        //Y軸
+        canvas.drawLine(
+                ORIGIN_X * density,
+                ORIGIN_Y * density,
+                (ORIGIN_X + AXIS_X) * density,
+                ORIGIN_Y * density,
+                getBaseLinePaint(context));
+        //X軸メモリと下に表示する数字
+        for (int x = 0; x <= scaleCountX; x++) {
+            float startX = (ORIGIN_X + scaleGraphValueX * x) * density;
+            float startY = (ORIGIN_Y) * density;
             canvas.drawLine(
                     startX,
                     startY,
                     startX,
-                    (startY-5*density),
+                    (startY - 5 * density),
                     getBaseLinePaint(context));
-            canvas.drawText(String.valueOf((int)graphData.axisDataX.minScale+x*(int)graphData.axisDataX.scaleValue),startX-8*density,startY+14*density,getBaseLinePaint(context));
+            canvas.drawText(String.valueOf((int) graphSettingData.axisDataX.minScale + x * (int) graphSettingData.axisDataX.scaleValue), startX - 8 * density, startY + 14 * density, getBaseLinePaint(context));
         }
+        //X軸名
+        canvas.drawText(graphSettingData.axisDataX.scaleTitle, (ORIGIN_X + 50) * density, (ORIGIN_Y + 30) * density, getLabelPaint(context));
+    }
 
-        L.d("ORIGIN_X = "+ORIGIN_X);
-
-        //グラフ
-        float previousX=-1,previousY=-1;
-        for (Map.Entry<Float,Float> entry: graphMail.entrySet()) {
-            L.d("-------------"+"start");
-            L.d(String.valueOf((entry.getValue()-graphData.axisDataY.minScale)/graphData.axisDataY.scaleValue));
-            float currentX = (ORIGIN_X + (entry.getKey()-graphData.axisDataX.minScale)/graphData.axisDataX.scaleValue*scaleGraphValueX)*density;
-            float currentY =  (ORIGIN_Y - (entry.getValue()-graphData.axisDataY.minScale)/graphData.axisDataY.scaleValue*scaleGraphValueY)*density;
-            L.d("x="+currentX+"   y="+currentY);
-            L.d("-------------"+"end");
-            canvas.drawPoint(currentX,currentY,getCirclePaint());
-            if( !(previousX==-1&&previousY==-1) ){
-                canvas.drawLine(previousX,previousY,currentX,currentY,getBaseLinePaint(context));
+    /**
+     * グラフ表がする
+     *
+     * @param canvas
+     * @param scaleGraphValueX
+     * @param scaleGraphValueY
+     * @param graph
+     */
+    private void drawGraph(Canvas canvas, float scaleGraphValueX, float scaleGraphValueY, HashMap<Float, Float> graph,String graphName) {
+        //グラフ1
+        if (graph == null) return;
+        float previousX = -1, previousY = -1, currentX = 0, currentY = 0;
+        for (Map.Entry<Float, Float> entry : graph.entrySet()) {
+            L.d("-------------" + "start");
+            L.d(String.valueOf((entry.getValue() - graphSettingData.axisDataY.minScale) / graphSettingData.axisDataY.scaleValue));
+            currentX = (ORIGIN_X + (entry.getKey() - graphSettingData.axisDataX.minScale) / graphSettingData.axisDataX.scaleValue * scaleGraphValueX) * density;
+            currentY = (ORIGIN_Y - (entry.getValue() - graphSettingData.axisDataY.minScale) / graphSettingData.axisDataY.scaleValue * scaleGraphValueY) * density;
+            L.d("x=" + currentX + "   y=" + currentY);
+            canvas.drawPoint(currentX, currentY, getCirclePaint());
+            if (!(previousX == -1 && previousY == -1)) {
+                canvas.drawLine(previousX, previousY, currentX, currentY, getBaseLinePaint(context));
             }
             previousX = currentX;
             previousY = currentY;
         }
-        //
-        canvas.drawText(graphData.axisDataX.scaleTitle,(ORIGIN_X+50)*density,(ORIGIN_Y+30)*density,getLabelPaint(context));
-
-        drawText(canvas,graphData.axisDataY.scaleTitle,(ORIGIN_X-35)*density,(ORIGIN_Y-50)*density,getLabelPaint(context),-90);
-
-        canvas.drawText(graphData.title,(ORIGIN_X+100)*density,(ORIGIN_Y-120)*density,getLabelPaint(context));
+        if(!TextUtils.isEmpty(graphName)){
+            canvas.drawText(graphName, currentX+30*density, currentY, getLabelPaint(context));
+        }
     }
 
-    public static int convDp2Px(Context context, int dp) {
+
+    private final int CIRCLE_COLOR = 0xFFb56f7f;
+    private final int BASE_LINE_COLOR = 0xFFFE85A0;
+    private final int LINE_WIDTH = 1;
+    private Paint sLabelPaint;
+    private final int FONT_SIZE = 12;
+    private final int FONT_COLOR = 0xFF400030;
+
+
+    private int convDp2Px(Context context, int dp) {
         float density = context.getResources().getDisplayMetrics().density;
         return (int) (dp * density);
     }
-    public static final int BASE_LINE_COLOR = 0xFFFE85A0;
-    private static final int LINE_WIDTH = 1;
-    public static Paint getBaseLinePaint(Context context) {
+
+    private Paint getBaseLinePaint(Context context) {
         Paint paint = new Paint();
         paint.setColor(BASE_LINE_COLOR);
         paint.setStrokeWidth(convDp2Px(context, LINE_WIDTH));
@@ -202,9 +220,8 @@ public class DrawViewDemo extends View {
         return paint;
     }
 
-    private static final int CIRCLE_COLOR = 0xFFb56f7f;
 
-    public static Paint getCirclePaint() {
+    private Paint getCirclePaint() {
         Paint paint = new Paint();
         paint.setColor(CIRCLE_COLOR);
         paint.setStyle(Paint.Style.FILL);
@@ -212,12 +229,8 @@ public class DrawViewDemo extends View {
         paint.setStrokeWidth(20);
         return paint;
     }
-    /**
-     * 目盛りテキスト描画用のPaint取得
-     * @param context コンテキスト
-     * @return Paint
-     */
-    public Paint getLabelPaint(Context context) {
+
+    private Paint getLabelPaint(Context context) {
         if (sLabelPaint == null) {
             Paint paint = new Paint();
             paint.setColor(FONT_COLOR);
@@ -230,16 +243,13 @@ public class DrawViewDemo extends View {
         }
         return sLabelPaint;
     }
-    private static Paint sLabelPaint;
-    private final int FONT_SIZE = 12;
-    private final int FONT_COLOR = 0xFF400030;
 
-    void drawText(Canvas canvas ,String text , float x ,float y,Paint paint ,float angle){
-        if(angle != 0){
+    private void drawText(Canvas canvas, String text, float x, float y, Paint paint, float angle) {
+        if (angle != 0) {
             canvas.rotate(angle, x, y);
         }
         canvas.drawText(text, x, y, paint);
-        if(angle != 0){
+        if (angle != 0) {
             canvas.rotate(-angle, x, y);
         }
     }

@@ -12,6 +12,8 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="グラフ生成する"
+        android:layout_margin="30dp"
         />
 
     <com.yanheng.drawgraph.graph.DrawViewDemo
