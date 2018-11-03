@@ -84,10 +84,8 @@ public class MainActivity extends Activity {
             }
         };
 
-        //Setting the actionbarToggle to drawer layout
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
-        //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
     }
 }
