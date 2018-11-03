@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_home"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="ホーム"
+            />
+        <item
+            android:id="@+id/item_vip"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="会員"
+            />
+        <item
+            android:id="@+id/item_others"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="そのほか"
+            />
+    </group>
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_help"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="ヘルプ"
+            />
+        <item
+            android:id="@+id/item_qa"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="お問い合わせ"
+            />
+        <item
+            android:id="@+id/item_company"
+            android:checked="false"
+            android:icon="@mipmap/ic_launcher"
+            android:title="会社情報"
+            />
+    </group>
+
+</menu>
