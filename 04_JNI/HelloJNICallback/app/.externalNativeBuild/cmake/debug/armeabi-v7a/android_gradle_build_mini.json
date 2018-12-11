@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "hello-jnicallback-Debug-armeabi-v7a": {
+      "artifactName": "hello-jnicallback",
+      "buildCommand": "C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target hello-jnicallback",
+      "abi": "armeabi-v7a",
+      "output": "D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libhello-jnicallback.so"
+    }
+  }
+}

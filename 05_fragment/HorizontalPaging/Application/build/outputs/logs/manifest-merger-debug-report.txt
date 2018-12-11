@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:1-44:12
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:1-44:12
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:1-44:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\633610e7c037772826fcdeec313b58b4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:gridlayout-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.0.2.aar\d018e22df19008e3589a8bc59fc25683\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\9181707da9920c360eb1759347f9984e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\70a10b65c39cc951882517e1bcfffbd5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\96c268995ad4b697c2a1bda2f97551e8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\ca2d3eed3fa244fe53109bc1c099b4db\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\9ff94bb3aec2de1752d9ba8a03a5e5ea\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\09bfd0615d69375d8a363eb97710fabc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\4d4df8e73147add28f3dc14c0d462108\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\20367ef04ff0472fc62444eba2071104\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\c316882def5621068b7079725add5472\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\0bbdf8b05216e0e881a9e7988c38c355\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:1-44:12
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:1-44:12
+	package
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:19:5-51
+	android:versionName
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:21:5-30
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:18:11-69
+	android:versionCode
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:20:5-28
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+application
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:27:5-42:19
+	android:label
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:30:9-41
+	android:icon
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:29:9-45
+	android:allowBackup
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:28:9-35
+	android:theme
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:31:9-40
+activity#com.example.android.horizontalpaging.MainActivity
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:33:9-41:20
+	android:label
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:35:13-45
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:34:13-77
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml:39:27-74
+uses-sdk
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\633610e7c037772826fcdeec313b58b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\633610e7c037772826fcdeec313b58b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.0.2.aar\d018e22df19008e3589a8bc59fc25683\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.0.2.aar\d018e22df19008e3589a8bc59fc25683\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\9181707da9920c360eb1759347f9984e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\9181707da9920c360eb1759347f9984e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\70a10b65c39cc951882517e1bcfffbd5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\70a10b65c39cc951882517e1bcfffbd5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\96c268995ad4b697c2a1bda2f97551e8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\96c268995ad4b697c2a1bda2f97551e8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\ca2d3eed3fa244fe53109bc1c099b4db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\ca2d3eed3fa244fe53109bc1c099b4db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\9ff94bb3aec2de1752d9ba8a03a5e5ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\9ff94bb3aec2de1752d9ba8a03a5e5ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\09bfd0615d69375d8a363eb97710fabc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\09bfd0615d69375d8a363eb97710fabc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\4d4df8e73147add28f3dc14c0d462108\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\4d4df8e73147add28f3dc14c0d462108\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\20367ef04ff0472fc62444eba2071104\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\20367ef04ff0472fc62444eba2071104\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\c316882def5621068b7079725add5472\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\c316882def5621068b7079725add5472\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\0bbdf8b05216e0e881a9e7988c38c355\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\0bbdf8b05216e0e881a9e7988c38c355\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\05_fragment\HorizontalPaging\Application\src\main\AndroidManifest.xml

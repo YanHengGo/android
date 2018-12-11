@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\x86_64 --target clean"
+  ],
+  "libraries": {
+    "hello-jnicallback-Debug-x86_64": {
+      "artifactName": "hello-jnicallback",
+      "buildCommand": "C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\x86_64 --target hello-jnicallback",
+      "abi": "x86_64",
+      "output": "D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libhello-jnicallback.so"
+    }
+  }
+}

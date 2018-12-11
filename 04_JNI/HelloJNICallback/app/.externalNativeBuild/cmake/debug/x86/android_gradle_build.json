@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"D:/workspace/01_android/99_gitroot/04_JNI/HelloJNICallback/app/src/main/cpp/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\x86 --target clean"
+	],
+	"libraries" : 
+	{
+		"hello-jnicallback-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "hello-jnicallback",
+			"buildCommand" : "C:\\Users\\dang7\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\workspace\\01_android\\99_gitroot\\04_JNI\\HelloJNICallback\\app\\.externalNativeBuild\\cmake\\debug\\x86 --target hello-jnicallback",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/dang7/AppData/Local/Android/Sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/dang7/AppData/Local/Android/Sdk/ndk-bundle/sysroot -Dhello_jnicallback_EXPORTS  -isystem C:/Users/dang7/AppData/Local/Android/Sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "D:/workspace/01_android/99_gitroot/04_JNI/HelloJNICallback/app/src/main/cpp/hello-jnicallback.c",
+					"workingDirectory" : "D:/workspace/01_android/99_gitroot/04_JNI/HelloJNICallback/app/.externalNativeBuild/cmake/debug/x86"
+				}
+			],
+			"output" : "D:/workspace/01_android/99_gitroot/04_JNI/HelloJNICallback/app/build/intermediates/cmake/debug/obj/x86/libhello-jnicallback.so",
+			"toolchain" : "2411090733"
+		}
+	},
+	"toolchains" : 
+	{
+		"2411090733" : 
+		{
+			"cCompilerExecutable" : "C:/Users/dang7/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Users/dang7/AppData/Local/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
