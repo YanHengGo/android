@@ -1,0 +1,1 @@
+adb install C:\workspace\03_workapp\51_automotive\05_research\01_svn\01_0406\trunk\MyService\app\build\outputs\apk\debug\app-debug.apk

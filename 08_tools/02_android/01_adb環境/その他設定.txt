@@ -1,0 +1,8 @@
+■プリイン版のパーミッション
+プリーインAPPのpermissionについて、
+/system/etc/permissions/privapp-permissions-platform.xml 
+に必要な権限を付与することができるかもしれません。
+
+■android.jar
+ローカルの差替え場所は下記の場所です。
+C:\Users\setup_user\AppData\Local\Android\Sdk\platforms\android-27

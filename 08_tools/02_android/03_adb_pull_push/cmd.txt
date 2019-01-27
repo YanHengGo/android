@@ -1,0 +1,1 @@
+cp /data/data/com.honda.ivi.usbav/shared_prefs/AudioLastRecovery1.xml /storage/emulated/0/usbtmp/

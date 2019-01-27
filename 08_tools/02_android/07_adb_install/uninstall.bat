@@ -1,0 +1,1 @@
+adb uninstall com.example.service.genkou.myservice

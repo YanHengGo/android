@@ -1,0 +1,1 @@
+adb pull /data/data/jp.co.ctc_g.spapl.client/

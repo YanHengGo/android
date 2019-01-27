@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="tutorial_splash" value="true" />
+    <boolean name="is_add_des_for_category" value="false" />
+    <boolean name="is_first_time_install" value="true" />
+</map>

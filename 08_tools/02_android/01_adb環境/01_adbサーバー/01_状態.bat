@@ -1,0 +1,2 @@
+adb get-state
+pause
