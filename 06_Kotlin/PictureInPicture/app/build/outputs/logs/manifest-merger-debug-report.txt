@@ -1,0 +1,110 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\ee00114979cfb12dc87ffe50a1603549\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\b47994f327a71e7fcc07be90aa98e00b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\3847e1e4eb4e58079229d69f8fc1b9a1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\c311a5af4572bb079b8d061613386264\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\21824c0f2daa7a7d37dd1c691399f540\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\2c59f7051f5b5e23ba037d2b400a8e80\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\6c9f681398d5180624a0d2808768da91\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e8dce33d1dedb01ed0e9d02c3c1b6565\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:17:1-30:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+	package
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:19:5-51
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:17:1-43:12
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:18:5-63
+application
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:21:5-41:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:25:9-35
+	android:label
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:24:9-41
+	android:icon
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:23:9-43
+	android:allowBackup
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:22:9-35
+	android:theme
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:26:9-40
+activity#com.example.android.pictureinpicture.MainActivity
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:28:9-36:20
+	android:supportsPictureInPicture
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:31:13-52
+	android:configChanges
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:30:13-91
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:29:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:32:13-35:29
+action#android.intent.action.MAIN
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:33:17-68
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:33:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:34:17-76
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:34:27-74
+activity#com.example.android.pictureinpicture.MediaSessionPlaybackActivity
+ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:37:9-39:55
+	android:supportsPictureInPicture
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:39:13-52
+	android:configChanges
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:38:13-91
+	android:name
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml:37:19-63
+uses-sdk
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\ee00114979cfb12dc87ffe50a1603549\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\ee00114979cfb12dc87ffe50a1603549\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\b47994f327a71e7fcc07be90aa98e00b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\b47994f327a71e7fcc07be90aa98e00b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\3847e1e4eb4e58079229d69f8fc1b9a1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\3847e1e4eb4e58079229d69f8fc1b9a1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\c311a5af4572bb079b8d061613386264\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\c311a5af4572bb079b8d061613386264\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\21824c0f2daa7a7d37dd1c691399f540\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\21824c0f2daa7a7d37dd1c691399f540\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\2c59f7051f5b5e23ba037d2b400a8e80\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\2c59f7051f5b5e23ba037d2b400a8e80\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\6c9f681398d5180624a0d2808768da91\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\6c9f681398d5180624a0d2808768da91\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e8dce33d1dedb01ed0e9d02c3c1b6565\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e8dce33d1dedb01ed0e9d02c3c1b6565\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\01_android\99_gitroot\06_Kotlin\PictureInPicture\app\src\main\AndroidManifest.xml
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dang7\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\3a711e4bac243d56ff3c4450ebb60d1e\AndroidManifest.xml:26:13-58

@@ -1,0 +1,4 @@
+#Wed Dec 12 06:22:12 JST 2018
+base.0=D\:\\workspace\\01_android\\99_gitroot\\06_Kotlin\\PictureInPicture\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
+path.0=classes.dex
+renamed.0=classes.dex
