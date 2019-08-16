@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
-import android.view.animation.BounceInterpolator;
+import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
@@ -23,15 +23,52 @@ public class MainActivity extends Activity {
     private ImageView img_ball;
     private Button btn_start;
     private Button btn_stop;
+    private Button btn_reset;
+    private Button btn_gone_animation;
     private AnimationSet animationSet = new AnimationSet(true);
 
     private void initView() {
+        final TopBrandingSearchConditionPickUpView testView = (TopBrandingSearchConditionPickUpView) findViewById(R.id.pick_up_view);
+        testView.initView();
+        testView.setListener(new PickupListener() {
+            @Override
+            public void onTextViewGone() {
+                testView.setVisibility(View.GONE);
+            }
+        });
+        btn_reset = findViewById(R.id.btn_reset);
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testView.setVisibility(View.VISIBLE);
+                testView.showTextView();
+            }
+        });
+
+        btn_gone_animation = findViewById(R.id.btn_gone_animation);
+        btn_gone_animation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testView.goneTextView();
+            }
+        });
+
+
         img_ball = (ImageView) findViewById(R.id.img_ball);
+        img_ball.setVisibility(View.INVISIBLE);
         btn_start = (Button) findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.alpha_anim);
+                Animation animation1 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale_anim2);
+                Animation animation2 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale_anim4);
+                animationSet.addAnimation(animation1);
+                animationSet.addAnimation(animation2);
+
+                img_ball.setVisibility(View.VISIBLE);
                 img_ball.startAnimation(animationSet);
+
             }
         });
         btn_stop = (Button) findViewById(R.id.btn_stop);
@@ -43,10 +80,10 @@ public class MainActivity extends Activity {
             }
         });
         //ボール跳ね返す効果
-        animationSet.setInterpolator(new BounceInterpolator());
+//        animationSet.setInterpolator(new BounceInterpolator());
         //アニメーション設定
-        animationSet.addAnimation(scaleAnimation);
-        animationSet.addAnimation(translateAnimation);
+//        animationSet.addAnimation(scaleAnimation);
+//        animationSet.addAnimation(translateAnimation);
     }
 
     //時間
@@ -56,7 +93,7 @@ public class MainActivity extends Activity {
     //２回以降の開始位置、
     //RESTART：初回の開始位置
     //REVERSE：終了位置
-    private final int REPEAT_MODE = Animation.RESTART; //REVERSE RESTART
+    private final int REPEAT_MODE = Animation.RELATIVE_TO_SELF; //REVERSE RESTART
     //大きさアニメーション
     private ScaleAnimation scaleAnimation;
 
@@ -68,8 +105,8 @@ public class MainActivity extends Activity {
                 Animation.RELATIVE_TO_SELF, 0.5f        //開始位置の位置Y
         );
         scaleAnimation.setDuration(DURATION_TIME);
-        scaleAnimation.setRepeatCount(REPEAT_COUNT);
-        scaleAnimation.setRepeatMode(REPEAT_MODE);
+        scaleAnimation.setRepeatCount(1);
+        scaleAnimation.setRepeatMode(Animation.ABSOLUTE);
     }
 
     //移動アニメーション初期化
@@ -87,7 +124,7 @@ public class MainActivity extends Activity {
         //アニメーションの時間
         translateAnimation.setDuration(DURATION_TIME);
         //アニメーションの回数数字または　Animation.INFINITE（無限回）
-        translateAnimation.setRepeatCount(REPEAT_COUNT);
+        translateAnimation.setRepeatCount(1);
         //アニメーションのMode
         translateAnimation.setRepeatMode(REPEAT_MODE);
     }
