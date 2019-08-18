@@ -12,8 +12,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.view.animation.ScaleAnimation
-import android.view.animation.TranslateAnimation
 import android.widget.LinearLayout
 
 abstract class BasePickUpView :LinearLayout{
@@ -29,7 +27,6 @@ abstract class BasePickUpView :LinearLayout{
 
     abstract fun getLayout() : Int
 
-
     lateinit var listener: PickupListener
     fun showSubView() {
         subView.alpha = 1F
@@ -38,10 +35,10 @@ abstract class BasePickUpView :LinearLayout{
 
         var animator1 = ObjectAnimator.ofFloat(subView, "TranslationY", -20F, 0F)
         var animator2 = ObjectAnimator.ofFloat(subView, "alpha", 0F, 1F)
-        val animatorSet2 = AnimatorSet()
-        animatorSet2.playTogether(animator1, animator2)
-        animatorSet2.duration = 100
-        animatorSet2.start()
+        val animatorSet = AnimatorSet()
+        animatorSet.playTogether(animator1, animator2)
+        animatorSet.duration = 100
+        animatorSet.start()
         subView.visibility = View.VISIBLE
     }
 
@@ -61,16 +58,6 @@ abstract class BasePickUpView :LinearLayout{
         subView.startAnimation(animation)
     }
 
-    fun initView() {
-        subView = findViewById(R.id.img_ball2)
-        firstPaddingTop = subView.paddingTop
-        initAnimationSet()
-        subView.setOnClickListener {
-            L.d("subView onclick")
-        }
-    }
-
-
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         val action = ev?.getAction()
         if (action == MotionEvent.ACTION_DOWN) {
@@ -81,12 +68,9 @@ abstract class BasePickUpView :LinearLayout{
         if (isUp && isScroll && ev != null) {
             //判別処理追加
             var margin = touchDownY - ev.y.toInt()
-            if (margin < 0) {
-                return true
+            if (margin > 0) {
+                goneAnimation()
             }
-            var paddingTop = firstPaddingTop - margin
-            var alpha = paddingTop.toFloat() / firstPaddingTop.toFloat()
-            goneAnimation()
         }
         gestureDetector.onTouchEvent(ev)
         return super.onInterceptTouchEvent(ev)
@@ -154,27 +138,4 @@ abstract class BasePickUpView :LinearLayout{
         })
         animatorSet2.start()
     }
-
-    private fun initAnimationSet() {
-        scaleAnimation.duration = 300
-
-        translateAnimation.duration = 300
-    }
-
-    private var scaleAnimation: ScaleAnimation = ScaleAnimation(
-            1f, 0.5f, //Xの開始大きさ
-            1f, 0.5f, //Yの開始大きさ
-            Animation.RELATIVE_TO_SELF, 0.5f, //開始位置の位置X
-            Animation.RELATIVE_TO_SELF, 0.5f        //開始位置の位置Y
-    )
-
-    //移動アニメーション初期化
-    private var translateAnimation = TranslateAnimation(
-            Animation.RELATIVE_TO_PARENT, 0F, //"X"開始位置のタイプとValue
-            Animation.RELATIVE_TO_PARENT, 0F, //"X"終了位置のタイプとValue
-            Animation.RELATIVE_TO_PARENT, 0F, // "Y"開始位置のタイプとValue　
-            Animation.RELATIVE_TO_PARENT, 0.9F //　"Y"終了位置のタイプとValue
-    );
-
-
 }

@@ -30,8 +30,13 @@ class TopBrandingSearchConditionPickUpView @JvmOverloads constructor(
         return R.layout.top_banding_search_condition_pickup_view
     }
 
-
-
+    fun initView() {
+        subView = findViewById(R.id.img_ball2)
+        firstPaddingTop = subView.paddingTop
+        subView.setOnClickListener {
+            L.d("subView onclick")
+        }
+    }
 }
 
 
