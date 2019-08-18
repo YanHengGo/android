@@ -33,8 +33,8 @@ abstract class BasePickUpView :LinearLayout{
         currentPaddingTop = firstPaddingTop
         setPaddingTop()
 
-        var animator1 = ObjectAnimator.ofFloat(subView, "TranslationY", -20F, 0F)
-        var animator2 = ObjectAnimator.ofFloat(subView, "alpha", 0F, 1F)
+        val animator1 = ObjectAnimator.ofFloat(subView, "TranslationY", -20F, 0F)
+        val animator2 = ObjectAnimator.ofFloat(subView, "alpha", 0F, 1F)
         val animatorSet = AnimatorSet()
         animatorSet.playTogether(animator1, animator2)
         animatorSet.duration = 100
@@ -43,7 +43,7 @@ abstract class BasePickUpView :LinearLayout{
     }
 
     fun goneSubView() {
-        var animation = AnimationUtils.loadAnimation(context, R.anim.zoomtopout)
+        val animation = AnimationUtils.loadAnimation(context, R.anim.zoomtopout)
         animation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationEnd(animation: Animation?) {
                 listener.onTextViewGone()
@@ -64,12 +64,12 @@ abstract class BasePickUpView :LinearLayout{
             isScroll = false
             touchDownY = ev.y.toInt()
         }
-        var isUp = ( action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL)
+        val isUp = ( action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL)
         if (isUp && isScroll && ev != null) {
             //判別処理追加
-            var margin = touchDownY - ev.y.toInt()
+            val margin = touchDownY - ev.y.toInt()
             if (margin > 0) {
-                goneAnimation()
+                onTapupGoneSubView()
             }
         }
         gestureDetector.onTouchEvent(ev)
@@ -78,14 +78,14 @@ abstract class BasePickUpView :LinearLayout{
 
     var isScroll = false
 
-    var gestureDetector = GestureDetector(context,object : GestureDetector.SimpleOnGestureListener() {
+    private var gestureDetector = GestureDetector(context,object : GestureDetector.SimpleOnGestureListener() {
         override fun onScroll(e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float): Boolean {
             L.d( "onScroll")
             if(e2==null){
                 return true
             }
             val touchMoveY = e2.y.toInt()
-            var margin = touchDownY.minus(touchMoveY)
+            val margin = touchDownY.minus(touchMoveY)
             onTouchMove(margin)
             isScroll = true
             return true
@@ -99,7 +99,7 @@ abstract class BasePickUpView :LinearLayout{
             return
         }
         currentPaddingTop = firstPaddingTop - margin
-        var alpha = 1F - margin.toFloat()/(firstPaddingTop.toFloat() * 5F)
+        val alpha = 1F - margin.toFloat()/(firstPaddingTop.toFloat() * 5F)
         setPaddingTop()
         subView.alpha = alpha
     }
@@ -112,13 +112,10 @@ abstract class BasePickUpView :LinearLayout{
     var firstPaddingTop = 0
     var touchDownY = -1
 
-    private fun goneAnimation() {
-        var fromAlpha = currentPaddingTop / firstPaddingTop.toFloat()
-
-        var fromTranslationY = currentPaddingTop.toFloat() - firstPaddingTop.toFloat()
-
-        var animator1 = ObjectAnimator.ofFloat(subView, "TranslationY", 0F, -20F)
-        var animator2 = ObjectAnimator.ofFloat(subView, "alpha", fromAlpha, 0F)
+    private fun onTapupGoneSubView() {
+        val fromAlpha = currentPaddingTop / firstPaddingTop.toFloat()
+        val animator1 = ObjectAnimator.ofFloat(subView, "TranslationY", 0F, -20F)
+        val animator2 = ObjectAnimator.ofFloat(subView, "alpha", fromAlpha, 0F)
         val animatorSet2 = AnimatorSet()
         animatorSet2.playTogether(animator1, animator2)
         animatorSet2.duration = 200
