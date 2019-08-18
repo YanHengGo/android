@@ -2,6 +2,7 @@ package com.animation3.yanheng;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -41,7 +42,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 testView.setVisibility(View.VISIBLE);
-                testView.showTextView();
+                testView.showSubView();
             }
         });
 
@@ -49,11 +50,9 @@ public class MainActivity extends Activity {
         btn_gone_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testView.goneTextView();
+                testView.goneSubView();
             }
         });
-
-
         img_ball = (ImageView) findViewById(R.id.img_ball);
         img_ball.setVisibility(View.INVISIBLE);
         btn_start = (Button) findViewById(R.id.btn_start);
