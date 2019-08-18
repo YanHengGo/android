@@ -2,7 +2,6 @@ package com.animation3.yanheng;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -31,18 +30,11 @@ public class MainActivity extends Activity {
     private void initView() {
         final TopBrandingSearchConditionPickUpView testView = (TopBrandingSearchConditionPickUpView) findViewById(R.id.pick_up_view);
         testView.initView();
-        testView.setListener(new PickupListener() {
-            @Override
-            public void onTextViewGone() {
-                testView.setVisibility(View.GONE);
-            }
-        });
         btn_reset = findViewById(R.id.btn_reset);
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testView.setVisibility(View.VISIBLE);
-                testView.showSubView();
+                testView.showSubViewWithAnimation();
             }
         });
 
@@ -50,7 +42,7 @@ public class MainActivity extends Activity {
         btn_gone_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testView.goneSubView();
+                testView.goneSubViewWithAnimation();
             }
         });
         img_ball = (ImageView) findViewById(R.id.img_ball);

@@ -70,7 +70,7 @@ class TopBrandingSearchConditionPickUpView2 : LinearLayout {
 //        if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
 //            Log.d("gentest", "ACTION_UP")
 //            //判別処理追加
-////            showSubView();
+////            showSubViewWithAnimation();
 ////            listener.onTextViewGone()
 //            var margin = touchDownY - ev.y.toInt()
 //            if (margin < 0) {
@@ -170,7 +170,7 @@ class TopBrandingSearchConditionPickUpView2 : LinearLayout {
         firstPaddingTop = img_ball2.paddingTop
         initAnimationSet()
         img_ball2.setOnClickListener {
-            L.d("img_ball2 onclick")
+            L.d("subView onclick")
         }
 
     }

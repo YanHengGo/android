@@ -5,7 +5,6 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -27,8 +26,8 @@ abstract class BasePickUpView :LinearLayout{
 
     abstract fun getLayout() : Int
 
-    lateinit var listener: PickupListener
-    fun showSubView() {
+    fun showSubViewWithAnimation() {
+        this.visibility = View.VISIBLE
         subView.alpha = 1F
         currentPaddingTop = firstPaddingTop
         setPaddingTop()
@@ -39,14 +38,16 @@ abstract class BasePickUpView :LinearLayout{
         animatorSet.playTogether(animator1, animator2)
         animatorSet.duration = 100
         animatorSet.start()
-        subView.visibility = View.VISIBLE
     }
 
-    fun goneSubView() {
+    fun goneSubViewWithAnimation() {
+        if(this.visibility == View.GONE){
+            return
+        }
         val animation = AnimationUtils.loadAnimation(context, R.anim.zoomtopout)
         animation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationEnd(animation: Animation?) {
-                listener.onTextViewGone()
+                goneRootView()
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
@@ -56,6 +57,9 @@ abstract class BasePickUpView :LinearLayout{
             }
         })
         subView.startAnimation(animation)
+    }
+    fun goneRootView() {
+        this.visibility = View.GONE
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
@@ -91,10 +95,9 @@ abstract class BasePickUpView :LinearLayout{
             return true
         }
     })
-    var currentPaddingTop = 0
+    private var currentPaddingTop = 0
 
     private fun onTouchMove(margin: Int) {
-        Log.d("gentest", "onTouchMov　${margin}")
         if (margin <= 0) {
             return
         }
@@ -121,7 +124,7 @@ abstract class BasePickUpView :LinearLayout{
         animatorSet2.duration = 200
         animatorSet2.addListener(object : Animator.AnimatorListener {
             override fun onAnimationEnd(animation: Animator?) {
-                listener.onTextViewGone()
+                goneRootView()
             }
 
             override fun onAnimationCancel(animation: Animator?) {
